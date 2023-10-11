@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n  %}
+
+{% block title %}{% translate 'Shop' %}{% endblock %}
+
+{% block style %}
+<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+
+<!-- fonts style -->
+<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Poppins:400,600,700&display=swap" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+<!-- responsive style -->
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+
+{% endblock %}
+
+{% block content %}
+<!-- item section -->
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<div class="item_section layout_padding2">
+    <div class="container">
+        <div class="item_container">
+            <div class="box">
+                <div class="price">
+                    <h6>
+                        Best PRICE
+                    </h6>
+                </div>
+                <div class="img-box">
+                    <img src="{% static 'images/i-1.png' %}" alt="">
+                </div>
+                <div class="name">
+                    <h5>
+                        Bracelet
+                    </h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="price">
+                    <h6>
+                        Best PRICE
+                    </h6>
+                </div>
+                <div class="img-box">
+                    <img src="{% static 'images/i-2.png' %}" alt="">
+                </div>
+                <div class="name">
+                    <h5>
+                        Ring
+                    </h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="price">
+                    <h6>
+                        Best PRICE
+                    </h6>
+                </div>
+                <div class="img-box">
+                    <img src="{% static 'images/i-3.png' %}" alt="">
+                </div>
+                <div class="name">
+                    <h5>
+                        Earings
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end item section -->
+
+
+<!-- price section -->
+
+<section class="price_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                Our Jewellery Price
+            </h2>
+        </div>
+        <div class="price_container">
+            {% for product in products %}
+            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                <a class="product-item" href="/product-detail/">
+                    <img src="{{ product.image.image.url }}" class="img-fluid product-thumbnail" alt="#">
+                    <h3 class="product-title">{{ product.title }}</h3>
+                    <strong class="product-price">${{ product.price }}</strong>
+                </a>
+                   <form method="post">
+                       {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ product.id }}">
+                        <button type="submit">
+                            Buy
+                        </button>
+                   </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- end price section -->
+
+<!-- info section -->
+<section class="info_section ">
+    <div class="container">
+        <div class="info_container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_logo">
+                        <a href="">
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                            <span>
+                  Lodge
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="https://www.google.com/maps/place/PDP+Academy/@41.3260875,69.2281415,15z/data=!4m6!3m5!1s0x38ae8bb7a0ebbae3:0xf9e01b5d45fc68cd!8m2!3d41.3264751!4d69.2284847!16s%2Fg%2F11h1f1qn6h?entry=ttu">
+                            <img src="{% static 'images/location.png' %}" alt="">
+                            <span>
+                  {% translate 'Address' %}
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{% static 'images/phone.png' %}" alt="">
+                            <span>
+                  +998 88 388 82 23
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{% static 'images/mail.png' %}" alt="">
+                            <span>
+                  jewellery@gmail.com
+                </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info_form">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        {% translate 'Newsletter' %}
+                    </h5>
+                </div>
+                <form action="">
+                    <div class="email_box">
+                        <label for="email2">Enter Your Email</label>
+                        <input type="text" id="email2">
+                    </div>
+                    <div>
+                        <button>
+                            subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="info_social">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        {% translate 'Follow Us' %}
+                    </h5>
+                </div>
+                <div class="social_box">
+                    <a href="https://www.facebook.com/">
+                        <img src="{% static 'images/fb.png' %}" alt="">
+                    </a>
+                    <a href="https://twitter.com/">
+                        <img src="{% static 'images/twitter.png' %}" alt="">
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <img src="{% static 'images/linkedin.png' %}" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="{% static 'images/insta.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end info_section -->
+
+{% endblock %}
+
+{% block js %}
+
+<script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+Django~=4.2.2
+future~=0.18.2
+Pillow~=9.5.0
+olefile~=0.46
+pip~=22.0.2
+wheel~=0.37.1
+Brotli~=1.0.9
+cryptography~=3.4.8
+keyring~=23.5.0
+asgiref~=3.7.2
+sqlparse~=0.4.4
+psycopg~=3.1.9
+colorama~=0.4.4
+PyYAML~=5.4.1
+requests~=2.25.1
+setuptools~=59.6.0

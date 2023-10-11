@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n  %}
+
+{% block title %}{% translate 'About' %}{% endblock %}
+{% block style %}
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+  <!-- about section -->
+
+  <section class="about_section layout_padding2-top layout_padding-bottom">
+    <div class="design-box">
+      <img src="{% static 'images/design-2.png' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                {% translate 'About Jewellery Shop' %}
+              </h2>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud
+            </p>
+            <div>
+              <a href="">
+                {% translate 'Read More' %}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+<!-- info section -->
+<section class="info_section ">
+    <div class="container">
+        <div class="info_container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_logo">
+                        <a href="">
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                            <span>
+                  Lodge
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="https://www.google.com/maps/place/PDP+Academy/@41.3260875,69.2281415,15z/data=!4m6!3m5!1s0x38ae8bb7a0ebbae3:0xf9e01b5d45fc68cd!8m2!3d41.3264751!4d69.2284847!16s%2Fg%2F11h1f1qn6h?entry=ttu">
+                            <img src="{% static 'images/location.png' %}" alt="">
+                            <span>
+                  {% translate 'Address' %}
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{% static 'images/phone.png' %}" alt="">
+                            <span>
+                  +998 88 388 82 23
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{% static 'images/mail.png' %}" alt="">
+                            <span>
+                  jewellery@gmail.com
+                </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info_form">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        {% translate 'Newsletter' %}
+                    </h5>
+                </div>
+                <form action="">
+                    <div class="email_box">
+                        <label for="email2">Enter Your Email</label>
+                        <input type="text" id="email2">
+                    </div>
+                    <div>
+                        <button>
+                            subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="info_social">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        {% translate 'Follow Us' %}
+                    </h5>
+                </div>
+                <div class="social_box">
+                    <a href="https://www.facebook.com/">
+                        <img src="{% static 'images/fb.png' %}" alt="">
+                    </a>
+                    <a href="https://twitter.com/">
+                        <img src="{% static 'images/twitter.png' %}" alt="">
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <img src="{% static 'images/linkedin.png' %}" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="{% static 'images/insta.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end info_section -->
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+{% endblock %}

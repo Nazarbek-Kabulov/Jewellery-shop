@@ -1,0 +1,520 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n  %}
+<!-- https://cloud.digitalocean.com/welcome?i=6be9b3 -->
+{% block title %}{% translate 'Home' %}{% endblock %}
+
+{% block style %}
+<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+
+<!-- fonts style -->
+<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Poppins:400,600,700&display=swap" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+<!-- responsive style -->
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block content %}
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+<!-- slider section -->
+<section class=" slider_section position-relative">
+    <div class="design-box">
+        <img src="{% static 'images/design-1.png' %}" alt="">
+    </div>
+    <div class="slider_number-container d-none d-md-block">
+        <div class="number-box">
+          <span>
+            01
+          </span>
+            <hr>
+            <span class="jwel">
+            J <br>
+            e <br>
+            w <br>
+            e <br>
+            l <br>
+            l <br>
+            e <br>
+            r <br>
+            y
+          </span>
+            <hr>
+            <span>
+            02
+          </span>
+        </div>
+    </div>
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="detail_box">
+                                <h2>
+                                    <span> {% translate 'New Collection' %}</span>
+                                    <hr>
+                                </h2>
+                                <h1>
+                                    Jewellery
+                                </h1>
+                                <p>
+                                    {% translate 'Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felislacinia' %}
+                                    {% translate 'aptent taciti sociosqu ad litora torquent per conubia nostra' %}
+                                </p>
+                                <div>
+                                    <a href="jewellery/">{% translate 'Shop Now' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <img src="{% static 'images/slider-img.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="detail_box">
+                                <h2>
+                                    <span> {% translate 'New Collection' %}</span>
+                                    <hr>
+                                </h2>
+                                <h1>
+                                    Jewellery
+                                </h1>
+                                <p>
+                                    {% translate 'Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felislacinia' %}
+                                    {% translate 'aptent taciti sociosqu ad litora torquent per conubia nostra' %}
+                                </p>
+                                <div>
+                                    <a href="jewellery/">{% translate 'Shop Now' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <img src="{% static 'images/slider-img.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="detail_box">
+                                <h2>
+                                    <span> {% translate 'New Collection' %}</span>
+                                    <hr>
+                                </h2>
+                                <h1>
+                                    Jewellery
+                                </h1>
+                                <p>
+                                    {% translate 'Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felislacinia' %}
+                                    {% translate 'aptent taciti sociosqu ad litora torquent per conubia nostra' %}
+                                </p>
+                                <div>
+                                    <a href="jewellery/">{% translate 'Shop Now' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <img src="{% static 'images/slider-img.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- end slider section -->
+
+<!-- item section -->
+
+<div class="item_section layout_padding2">
+    <div class="container">
+        <div class="item_container">
+            <div class="box">
+                <div class="price">
+                    <h6>
+                        {% translate 'Best PRICE' %}
+                    </h6>
+                </div>
+                <div class="img-box">
+                    <img src="{% static 'images/i-1.png' %}" alt="">
+                </div>
+                <div class="name">
+                    <h5>
+                        {% translate 'Bracelet' %}
+                    </h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="price">
+                    <h6>
+                        {% translate 'Best PRICE' %}
+                    </h6>
+                </div>
+                <div class="img-box">
+                    <img src="{% static 'images/i-2.png' %}" alt="">
+                </div>
+                <div class="name">
+                    <h5>
+                        {% translate 'Ring' %}
+                    </h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="price">
+                    <h6>
+                        {% translate 'Best PRICE' %}
+                    </h6>
+                </div>
+                <div class="img-box">
+                    <img src="{% static 'images/i-3.png' %}" alt="">
+                </div>
+                <div class="name">
+                    <h5>
+                        {% translate 'Earings' %}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end item section -->
+
+<!-- about section -->
+
+<section class="about_section layout_padding2-top layout_padding-bottom">
+    <div class="design-box">
+        <img src="{% static 'images/design-2.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <div class="heading_container">
+                        <h2>
+                            {% translate 'About Jewellery Shop' %}
+                        </h2>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum dolor sit amet,
+                        consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim
+                        veniam, quis nostrud
+                    </p>
+                    <div>
+                        <a href="">
+                            {% translate 'Read More' %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="img-box">
+                    <img src="{% static 'images/about-img.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end about section -->
+
+<!-- price section -->
+
+<section class="price_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                {% translate 'Our Jewellery Price' %}
+            </h2>
+        </div>
+        <div class="price_container">
+            {% for product in products %}
+            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                <a class="product-item" href="/product-detail/">
+                    <img src="{{ product.image.image.url }}" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">{{ product.title }}</h3>
+                    <strong class="product-price">${{ product.price }}</strong>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex justify-content-center">
+            <a href="jewellery/" class="price_btn">
+                {% translate 'See More' %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- end price section -->
+
+<!-- ring section -->
+
+<section class="ring_section layout_padding">
+    <div class="design-box">
+        <img src="{% static 'images/design-1.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="ring_container layout_padding2">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="detail-box">
+                        <h4>
+                            {% translate 'special' %}
+                        </h4>
+                        <h2>
+                            {% translate 'Wedding Ring' %}
+                        </h2>
+                        <a href="jewellery/">
+                            {% translate 'Buy Now' %}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="img-box">
+                        <img src="{% static 'images/ring-img.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end ring section -->
+
+<!-- client section -->
+
+<section class="client_section">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                {% translate 'Testimonial' %}
+            </h2>
+        </div>
+        <h4 class="secondary_heading">
+            {% translate 'What our customers say' %}
+        </h4>
+
+        <div id="my_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for comment in comments %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="client_container">
+                        <div class="client-id">
+                            <div class="img-box">
+                                <img src="{% static 'images/client.png' %}" alt="">
+                            </div>
+                            <div class="name">
+                                <h5>
+                                    {{ comment.name }}
+                                </h5>
+                                <h6>
+                                    {{ comment.email }}
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <p>
+                                {{ comment.message }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- end client section -->
+
+<!-- contact section -->
+
+<section class="contact_section layout_padding">
+    <div class="design-box">
+        <img src="{% static 'images/design-2.png' %}" alt="">
+    </div>
+        <div class="container ">
+            <div class="">
+                <h2 class="">
+                    {% translate 'Comment' %}
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div>
+<!--                                                        <input type="text" placeholder="Name" name="Name"/>-->
+                            {{ form.name}}
+                        </div>
+                        <div>
+<!--                                                        <input type="email" placeholder="Email" name="email"/>-->
+                            {{ form.email }}
+                        </div>
+                        <div>
+<!--                                                        <input type="text" placeholder="Phone Number" name="phone"/>-->
+                            {{ form.phone }}
+                        </div>
+                        <div>
+<!--                                                        <textarea class="message-bt" placeholder="Message" rows="5" id="comment" name="message"></textarea>-->
+                            {{ form.message }}
+                        </div>
+                        <button type="submit" class="btn btn-info">{% translate 'Add Comment' %}</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="map_container">
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
+                                    width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- end contact section -->
+
+<!-- info section -->
+<section class="info_section ">
+    <div class="container">
+        <div class="info_container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_logo">
+                        <a href="">
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                            <span>
+                  Lodge
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="https://www.google.com/maps/place/PDP+Academy/@41.3260875,69.2281415,15z/data=!4m6!3m5!1s0x38ae8bb7a0ebbae3:0xf9e01b5d45fc68cd!8m2!3d41.3264751!4d69.2284847!16s%2Fg%2F11h1f1qn6h?entry=ttu">
+                            <img src="{% static 'images/location.png' %}" alt="">
+                            <span>
+                  {% translate 'Address' %}
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{% static 'images/phone.png' %}" alt="">
+                            <span>
+                  +998 88 388 82 23
+                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <a href="">
+                            <img src="{% static 'images/mail.png' %}" alt="">
+                            <span>
+                  jewellery@gmail.com
+                </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="info_form">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        {% translate 'Newsletter' %}
+                    </h5>
+                </div>
+                <form action="">
+                    <div class="email_box">
+                        <label for="email2">Enter Your Email</label>
+                        <input type="text" id="email2">
+                    </div>
+                    <div>
+                        <button>
+                            subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="info_social">
+                <div class="d-flex justify-content-center">
+                    <h5 class="info_heading">
+                        {% translate 'Follow Us' %}
+                    </h5>
+                </div>
+                <div class="social_box">
+                    <a href="https://www.facebook.com/">
+                        <img src="{% static 'images/fb.png' %}" alt="">
+                    </a>
+                    <a href="https://twitter.com/">
+                        <img src="{% static 'images/twitter.png' %}" alt="">
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <img src="{% static 'images/linkedin.png' %}" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="{% static 'images/insta.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end info_section -->
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+{% endblock %}
